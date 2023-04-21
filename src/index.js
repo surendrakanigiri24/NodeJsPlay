@@ -8,6 +8,11 @@ const PORT = process.env.PORT || 3000;
 const  errorHandler = require('./middleware/errorHandler');
 app.use(errorHandler);
 
+// DB Configuration
+const connectDB = require('./clients/db/db');
+connectDB();
+
+
 
 
 // TO handle requests
