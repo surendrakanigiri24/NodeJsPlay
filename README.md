@@ -11,6 +11,14 @@ npx eslint --init
 # index.js
 Start point of the machine
 
+# config.js
+constants, env variables defined here
+
+# middleware
+Here we can find global middlewares like errorHandlers... and routes middlewares
+    1. errorHandler(Global middleware) ==> It's deals with errors that exists in application
+
+
 
 
 
