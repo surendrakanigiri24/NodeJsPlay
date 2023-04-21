@@ -18,6 +18,10 @@ constants, env variables defined here
 Here we can find global middlewares like errorHandlers... and routes middlewares
     1. errorHandler(Global middleware) ==> It's deals with errors that exists in application
 
+# Clients
+Here we can find configuration of 3rd party services
+    1. db ==> db.js ==> Done with mongo connections
+
 
 
 
