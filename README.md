@@ -4,5 +4,13 @@ It's all about node with it's ops
 # package.json
 Ofcourse, all you know about this file.
 
+# .eslintrc.js
+npm install eslint --save-dev
+npx eslint --init
+
 # index.js
 Start point of the machine
+
+
+
+
