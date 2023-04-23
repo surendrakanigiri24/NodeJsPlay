@@ -4,6 +4,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 
+// Middleware to parse JSON data in request body
+app.use(express.json());
+
 //Error Handler configure
 const  errorHandler = require('./middleware/errorHandler');
 app.use(errorHandler);
@@ -12,7 +15,14 @@ app.use(errorHandler);
 const connectDB = require('./clients/db/db');
 connectDB();
 
+// Routes forwarding
+const routes = require("./routes");
+app.use("/api/users", routes.userRoutes);
 
+// sample route
+app.get("/", (req,res) => {
+  res.send(" YA!, I am working");
+})
 
 
 // TO handle requests
