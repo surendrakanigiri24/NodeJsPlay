@@ -17,7 +17,7 @@ const userCreation = async (body) => {
         return newUser;
     }
     catch(error){
-        console.error("Error at userCreation Manager: "+error);
+        console.error("Error at userCreation Manager: \n" + error);
         return {};
     }
 }
