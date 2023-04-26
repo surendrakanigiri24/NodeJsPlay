@@ -9,6 +9,11 @@ router.post( "/userRegistration",
     asyncHanlder(users.userRegistration)
 );
 
+router.get( "/findUser?:id",
+    asyncHanlder(users.findUser)
+);
+
+
 module.exports = router;
 
 
