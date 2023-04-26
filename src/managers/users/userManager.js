@@ -1,5 +1,4 @@
-
-
+const mongoose = require('mongoose');
 
 // Models invoking
 const model = require("../../models/index");
@@ -22,6 +21,24 @@ const userCreation = async (body) => {
     }
 }
 
+/**
+ * This is for having user details based on user_id
+ * @param {string} id
+ * @return {object}
+ */
+const findUser = async (id) => {
+    try{
+        const user = await model.userModel.findOne({ _id : new mongoose.Types.ObjectId(id)})
+        console.log(user)
+        return user;
+    }
+    catch(error){
+        console.error("Error at findUser Manager: \n" + error);
+        return {};
+    }
+}
+
 module.exports = {
     userCreation,
+    findUser,
 }
