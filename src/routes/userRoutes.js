@@ -17,6 +17,10 @@ router.put( "/editUserData",
     asyncHanlder(users.editUserData)
 )
 
+router.delete( "/deleteUser",
+    asyncHanlder(users.deleteUser)
+)
+
 
 module.exports = router;
 

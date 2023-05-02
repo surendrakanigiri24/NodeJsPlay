@@ -10,7 +10,7 @@ const Users = {
         if (error) {
             throw error; // Throw an error if validation fails
         }
-        
+
         const newUserCreated = await managers.userManager.userCreation(req.body);
         res.json(newUserCreated);
     },
@@ -34,6 +34,17 @@ const Users = {
 
         const updateUser = await managers.userManager.updateUserData(req.body);
         res.json(updateUser);
+    },
+
+    //Delete user
+    deleteUser : async (req,res) => {
+        const id = req.query.id;
+        if(id == ''){
+            return res.status(400).json({ message : "_id is not valid"})
+        }
+
+        const deletedUser = await managers.userManager.deleteUser(id);
+        res.json(deletedUser);
     }
 }
 
