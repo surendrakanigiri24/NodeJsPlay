@@ -6,7 +6,11 @@ const Users = {
 
     // User registration to the application
     userRegistration : async (req,res) => {
-        validator.validateAsync(req.body);
+        const { error } = await validator.validateAsync(req.body); // Joi validation
+        if (error) {
+            throw error; // Throw an error if validation fails
+        }
+        
         const newUserCreated = await managers.userManager.userCreation(req.body);
         res.json(newUserCreated);
     },
