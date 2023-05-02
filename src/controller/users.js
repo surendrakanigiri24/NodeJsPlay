@@ -19,6 +19,17 @@ const Users = {
         }
         const user = await managers.userManager.findUser(id);
         res.json(user);
+    },
+
+    // update user data
+    editUserData : async (req,res) => {
+        const { error, value } = await validator.validateAsync(req.body); // Joi validation
+        if (error) {
+            throw error; // Throw an error if validation fails
+        }
+
+        const updateUser = await managers.userManager.updateUserData(req.body);
+        res.json(updateUser);
     }
 }
 

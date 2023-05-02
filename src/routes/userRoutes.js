@@ -13,6 +13,10 @@ router.get( "/findUser?:id",
     asyncHanlder(users.findUser)
 );
 
+router.put( "/editUserData",
+    asyncHanlder(users.editUserData)
+)
+
 
 module.exports = router;
 

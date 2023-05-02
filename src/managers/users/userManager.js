@@ -17,7 +17,7 @@ const userCreation = async (body) => {
     }
     catch(error){
         console.error("Error at userCreation Manager: \n" + error);
-        return {};
+        throw error;
     }
 }
 
@@ -34,11 +34,33 @@ const findUser = async (id) => {
     }
     catch(error){
         console.error("Error at findUser Manager: \n" + error);
-        return {};
+        throw error;
+    }
+}
+
+/**
+ * This is for updating user data
+ * @param {object} payload
+ * @return {*}
+ */
+const updateUserData = async(payload) => {
+    try{
+        const findUser = await model.userModel.findOne({ _id : new mongoose.Types.ObjectId(payload.id)});
+        if(!findUser){
+            return { msg: "Not a valid user"}
+        }
+
+        const updateUser = await model.userModel.updateOne({ _id : new mongoose.Types.ObjectId(payload.id)}, payload)
+        return updateUser;
+    }
+    catch(error){
+        console.error("Error at updateUserData Manager: \n" + error);
+        throw error;
     }
 }
 
 module.exports = {
     userCreation,
     findUser,
+    updateUserData,
 }
