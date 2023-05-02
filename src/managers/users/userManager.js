@@ -59,8 +59,25 @@ const updateUserData = async(payload) => {
     }
 }
 
+/**
+ * This is for delete user
+ * @param {string} id
+ * @return {*}
+ */
+const deleteUser = async (id) => {
+    try{
+        const deletedUserCount = await model.userModel.deleteOne({ _id : new mongoose.Types.ObjectId(id)});
+        return deletedUserCount;
+    }   
+    catch(error){
+        console.error("Error at deleteUser Manager: \n" + error);
+        throw error;
+    }
+    
+}
 module.exports = {
     userCreation,
     findUser,
     updateUserData,
+    deleteUser,
 }
