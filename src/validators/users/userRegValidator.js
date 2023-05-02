@@ -2,6 +2,8 @@ const Joi = require('joi');
 
 const userRegistrationSchema = Joi.object({
 
+    id: Joi.string(),
+    
     email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
     
