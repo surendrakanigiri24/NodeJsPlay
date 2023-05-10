@@ -21,7 +21,7 @@ app.use("/api/users", routes.userRoutes);
 
 // sample route
 app.get("/", (req,res) => {
-  res.send(" YA!, I am working");
+  res.status(200).send({message:" YA!, I am working"});
 })
 
 
@@ -37,3 +37,6 @@ server.on('error', (err) => {
       console.error(err);
     }
 });
+
+
+module.exports = app; // for testing
