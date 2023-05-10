@@ -1,0 +1,36 @@
+{
+  "name": "nodejsplay",
+  "version": "1.0.0",
+  "description": "It's all about node with unit tests, ci/cd, ...",
+  "main": "index.js",
+  "engine": {
+    "node": "16.19.0"
+  },
+  "scripts": {
+    "start": "nodemon src/index",
+    "lint": "eslint src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surendrakanigiri24/NodeJsPlay.git"
+  },
+  "author": "Surendra Kanigiri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surendrakanigiri24/NodeJsPlay/issues"
+  },
+  "homepage": "https://github.com/surendrakanigiri24/NodeJsPlay#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "joi": "^17.9.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.4",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0"
+  }
+}
