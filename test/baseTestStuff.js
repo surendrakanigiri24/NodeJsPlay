@@ -10,7 +10,7 @@ chai.should();
 
 const TEST_DATA = {
     USER : {
-        "email": "siriv1997@gmail.net",
+        "email": "siriv199745@gmail.net",
         "password": "surendraKanigiri",
         "firstName": "Surendra",
         "lastName": "Kanigiri",
