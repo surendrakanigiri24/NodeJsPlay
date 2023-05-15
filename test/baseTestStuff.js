@@ -10,16 +10,16 @@ chai.should();
 
 const TEST_DATA = {
     USER : {
-        "email": "siriv199745@gmail.net",
+        "email": "siriv19745@gmail.net",
         "password": "surendraKanigiri",
         "firstName": "Surendra",
         "lastName": "Kanigiri",
         "role": "user",
         "isVerified": false
     },
-    USERID: "6461b847039ab692ca68b8bd",
+    USERID: "6461beab6362c4dd22baaa69",
     EDITUSER : {
-        "id":"6461b847039ab692ca68b8bd",
+        "id":"6461b875e864f439e3f67390",
         "email": "siriv19975@gmail.net",
         "password": "surendraKani",
         "firstName": "Surendra",
