@@ -17,7 +17,16 @@ const TEST_DATA = {
         "role": "user",
         "isVerified": false
     },
-    USERID: "6461b847039ab692ca68b8bd"
+    USERID: "6461b847039ab692ca68b8bd",
+    EDITUSER : {
+        "id":"6461b847039ab692ca68b8bd",
+        "email": "siriv19975@gmail.net",
+        "password": "surendraKani",
+        "firstName": "Surendra",
+        "lastName": "Kanigiri",
+        "role": "user",
+        "isVerified": false
+    },
 }
 
 module.exports = {
