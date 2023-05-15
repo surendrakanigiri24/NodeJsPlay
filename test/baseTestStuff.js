@@ -16,7 +16,8 @@ const TEST_DATA = {
         "lastName": "Kanigiri",
         "role": "user",
         "isVerified": false
-    }
+    },
+    USERID: "6461b847039ab692ca68b8bd"
 }
 
 module.exports = {
