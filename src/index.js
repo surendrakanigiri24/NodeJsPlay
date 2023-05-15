@@ -24,6 +24,13 @@ app.get("/", (req,res) => {
   res.status(200).send({message:" YA!, I am working"});
 })
 
+// Swagger implementation
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
+const swaggerDocument = YAML.load(process.cwd()+'/src/swagger.yaml');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 // TO handle requests
 const server = app.listen( PORT, () => {
