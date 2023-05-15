@@ -48,6 +48,7 @@ const Users = {
 
     //Delete user
     deleteUser : async (req,res) => {
+        console.log(req.query.id,'delete');
         const id = req.query.id;
         if(id == ''){
             return res.status(400).json({ message : "_id is not valid"})
