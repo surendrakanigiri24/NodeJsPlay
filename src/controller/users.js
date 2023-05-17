@@ -1,3 +1,4 @@
+const CONFIG = require("../config");
 const managers = require("../managers/index");
 const validator = require("../validators/users/userRegValidator");
 
@@ -6,13 +7,22 @@ const Users = {
 
     // User registration to the application
     userRegistration : async (req,res) => {
-        const { error } = await validator.validateAsync(req.body); // Joi validation
-        if (error) {
-            throw error; // Throw an error if validation fails
+        try{
+            const { error } = await validator.validateAsync(req.body); // Joi validation
+            if (error) {
+                console.log({error})
+                throw error; // Throw an error if validation fails
+            }
+            const newUserCreated = await managers.userManager.userCreation(req.body);
+            res.json(newUserCreated);
+        }   
+        catch(error){
+            let msg = error;
+            if(error.code == 11000){
+                msg = 'Duplicate email found. Please enter unique email.'
+            }
+            res.status(400).json({ msg : msg })
         }
-
-        const newUserCreated = await managers.userManager.userCreation(req.body);
-        res.json(newUserCreated);
     },
 
     // Find user by user id
@@ -38,6 +48,7 @@ const Users = {
 
     //Delete user
     deleteUser : async (req,res) => {
+        console.log(req.query.id,'delete');
         const id = req.query.id;
         if(id == ''){
             return res.status(400).json({ message : "_id is not valid"})

@@ -21,8 +21,15 @@ app.use("/api/users", routes.userRoutes);
 
 // sample route
 app.get("/", (req,res) => {
-  res.send(" YA!, I am working");
+  res.status(200).send({message:" YA!, I am working"});
 })
+
+// Swagger implementation
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
+const swaggerDocument = YAML.load(process.cwd()+'/src/swagger.yaml');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 // TO handle requests
@@ -37,3 +44,6 @@ server.on('error', (err) => {
       console.error(err);
     }
 });
+
+
+module.exports = app; // for testing

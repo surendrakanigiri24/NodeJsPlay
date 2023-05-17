@@ -3,7 +3,7 @@ const CONFIG = require("../../config");
 
 const connectDB = async () => {
     try {
-        const DB_URI = `mongodb+srv://${CONFIG.DB_USERNAME}:${encodeURIComponent(CONFIG.DB_PASSWORD)}@${CONFIG.DB_HOST}/${CONFIG.DB_NAME}`;
+        const DB_URI = `mongodb://${CONFIG.DB_USERNAME}:${encodeURIComponent(CONFIG.DB_PASSWORD)}@${CONFIG.DB_HOST}/${CONFIG.DB_NAME}`; //mongodb+srv: if host is url
 
         const conn = await mongoose.connect(DB_URI);
         console.log(`Mongo db connected: ${conn.connection.host}`);

@@ -17,7 +17,7 @@ router.put( "/editUserData",
     asyncHanlder(users.editUserData)
 )
 
-router.delete( "/deleteUser",
+router.delete( "/deleteUser?:id",
     asyncHanlder(users.deleteUser)
 )
 

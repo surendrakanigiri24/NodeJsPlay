@@ -1,0 +1,88 @@
+openapi: 3.0.0
+info:
+  title: NODE CRUD
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:3000/api/users'
+paths:
+  /userRegistration:
+    post:
+      tags:
+        - users
+      summary: user creation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: siriv1997@gmail.net
+                password: surendraKanigiri
+                firstName: Surendra
+                lastName: Kanigiri
+                role: user
+                isVerified: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /findUser/:
+    get:
+      tags:
+        - users
+      summary: Find User
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          example: 6461b875e864f439e3f67390
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /editUserData:
+    put:
+      tags:
+        - users
+      summary: update user info
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 6444bb88769565ac5501471b
+                email: sriv1997@gmail.net
+                password: surendraKanigiri
+                firstName: Surendra
+                lastName: Kanigi
+                role: user
+                isVerified: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /deleteUser/:
+    delete:
+      tags:
+        - users
+      summary: New Request
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          example: 6461b847039ab692ca68b8bd
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+
+
+
+# https://www.workversatile.com/postman-to-swagger 
