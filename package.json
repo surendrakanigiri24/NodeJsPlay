@@ -7,6 +7,10 @@
     "node": "16.19.0"
   },
   "scripts": {
+    "clearBuild": "rm -rf build && mkdir build",
+    "build-src": "cp -R src build/src",
+    "copy-package": "cp -n package*.json build && cp .env.sample build/.env",
+    "build": "npm run clearBuild && npm run build-src && npm run copy-package && echo \"Don't forget the .env files!\"",
     "start": "nodemon src/index",
     "lint": "eslint src/",
     "test": "mocha --recursive"
