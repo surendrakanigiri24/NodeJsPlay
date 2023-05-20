@@ -8,6 +8,11 @@ Ofcourse, all you know about this file.
 npm install eslint --save-dev
 npx eslint --init
 
+# JEST Installation
+npm install --save-dev jest
+Jest expects test files to be named with the .test.js or .spec.js extension.
+npx jest or npm run jest 
+
 # index.js
 Start point of the machine
 
