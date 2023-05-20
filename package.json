@@ -10,8 +10,7 @@
     "start": "nodemon src/index",
     "lint": "eslint src/",
     "test": "mocha --recursive",
-    "jest": "jest --detectOpenHandles",
-    "coverage": "nyc --reporter=text-summary jest && nyc report"
+    "jest": "jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -40,5 +39,12 @@
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "supertest": "^6.3.3"
-  }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ]
+  }  
 }
