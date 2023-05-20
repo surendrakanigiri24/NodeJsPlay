@@ -39,4 +39,7 @@ server.on('error', (err) => {
 });
 
 
-module.exports = app; // for testing
+module.exports = { 
+  app,
+  server
+}; // for testing
