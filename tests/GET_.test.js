@@ -5,7 +5,7 @@ const {app, server} = require('../src/index.js');
 describe("GET /", () => {
 
   beforeAll(function () {
-    // server = require("../src/index.js");
+    // server = require("../src/index.js")
   });
 
   afterAll( async() => {
