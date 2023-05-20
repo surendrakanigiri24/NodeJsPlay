@@ -12,6 +12,7 @@ npx eslint --init
 npm install --save-dev jest
 Jest expects test files to be named with the .test.js or .spec.js extension.
 npx jest or npm run jest 
+npm run jest -- -u
 
 # index.js
 Start point of the machine
