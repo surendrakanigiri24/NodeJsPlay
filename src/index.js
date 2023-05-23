@@ -21,7 +21,7 @@ app.use("/api/users", routes.userRoutes);
 
 // sample route
 app.get("/", (req,res) => {
-  res.status(200).send({message:" YA!, I am workin"});
+  res.status(200).send({message:" YA!, I am working"});
 })
 
 // Swagger implementation
